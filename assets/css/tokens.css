@@ -1,0 +1,109 @@
+/* ===================================================
+   HealthCore — design tokens
+   Único lugar do projeto com valores de cor, tipo,
+   espaço, raio, sombra e movimento. O resto do CSS
+   usa só var(--…).
+=================================================== */
+
+:root {
+  color-scheme: light dark;
+
+  /* ---------- Cor (tema claro) ---------- */
+  --surface: #F7F2EA;          /* fundo da página */
+  --surface-raised: #FFFDF9;   /* cards, modais, formulários */
+  --sand: #E9DDC9;             /* painéis tintados, botão secundário */
+  --line: #D9CCB8;             /* divisórias */
+  --line-strong: #8A7F6E;      /* bordas de input */
+  --ink: #2E2A24;              /* texto */
+  --ink-muted: #665E53;        /* texto secundário */
+  --olive: #566236;            /* primária: botões, links, ativo */
+  --olive-strong: #454F2B;     /* hover */
+  --olive-soft: #DEE3CB;
+  --on-olive: #FFFDF9;
+  --quartz: #E4B5B1;           /* acento, uso pontual */
+  --on-quartz: #2E2A24;
+  --quartz-ink: #94434B;
+  --danger: #A33A33;
+  --on-danger: #FFFDF9;
+
+  /* Véu atrás de drawer e modais */
+  --scrim: rgba(46, 42, 36, 0.32);
+
+  /* ---------- Tipografia ---------- */
+  --font-title: 'Fraunces', Georgia, serif;
+  --font-text: 'Nunito Sans', system-ui, sans-serif;
+
+  --title-xl: 48px;
+  --title-lg: 32px;
+  --title-md: 24px;
+  --title-sm: 19px;
+
+  --text-lg: 18px;
+  --text-md: 16px;
+  --text-sm: 14px;
+  --text-xs: 12px;
+
+  --weight-title: 600;
+  --weight-regular: 400;
+  --weight-label: 600;
+  --weight-strong: 700;
+
+  /* ---------- Espaçamento (base 4px) ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* ---------- Raios ---------- */
+  --radius-input: 6px;
+  --radius-card: 12px;
+  --radius-panel: 24px;
+  --radius-pill: 9999px;
+
+  /* ---------- Sombra (só menus e modais) ---------- */
+  --shadow-overlay: 0 2px 12px rgba(46, 42, 36, 0.08);
+
+  /* ---------- Foco ---------- */
+  --focus-width: 2px;
+  --focus-offset: 2px;
+
+  /* ---------- Movimento (tabelas da skill animate) ---------- */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);        /* entrada, press */
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);     /* drawer (curva iOS/Ionic) */
+  --duration-press: 120ms;                           /* feedback de clique */
+  --duration-state: 150ms;                           /* cor, hover */
+  --duration-overlay: 200ms;                         /* drawer e modais */
+
+  /* ---------- Layout ---------- */
+  --content-max: 1040px;
+  --header-height: 64px;
+  --drawer-width: 360px;
+}
+
+/* ---------- Cor (tema escuro) ---------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: #1D1B17;
+    --surface-raised: #27241F;
+    --sand: #3B342A;
+    --line: #3E3830;
+    --line-strong: #7A7061;
+    --ink: #F2ECE2;
+    --ink-muted: #B3A999;
+    --olive: #A9B77D;
+    --olive-strong: #BCC894;
+    --olive-soft: #363B26;
+    --on-olive: #1D1B17;
+    --quartz: #D7A19D;
+    --on-quartz: #1D1B17;
+    --quartz-ink: #E7B2AE;
+    --danger: #E8897F;
+    --on-danger: #1D1B17;
+
+    --scrim: rgba(0, 0, 0, 0.56);
+    /* No escuro a sombra clara some; o contraste de superfície faz a separação */
+    --shadow-overlay: 0 2px 12px rgba(0, 0, 0, 0.4);
+  }
+}
